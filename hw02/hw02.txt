@@ -1,0 +1,37 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+September 3, 2018
+
+Hw02 Short Answer Questions
+
+1. Int can be used to declare and initialize a variable in the same line, whereas const int cannot be changed after you initialize the variable.
+
+2. Function declarations (AKA prototypes) tell the compiler the name and type of function depending on where you put it whereas function definitions specify the functions and can also act as a declaration.
+
+3. Unsigned integers can be used to hold large numbers as a way to devote to the value based on the bit that can indicate the sign and you can use them anywhere that has a negative number such as an array index.
+
+4. In the given C++ code, the sum variable is not initialized as a value.  In order to fix that, you have to set the variable to 0.
+
+Correct output:
+int sum=0;
+    for(int i=0; i<1000; ++i) {
+        sum += i;
+    }
+printf("Sum of 0 to 999 is %d\n", sum);
+
+5. The code will not compile since there is only one equal (=) sign in the if statement condition and print is not declared as a C++ identifier.  In order to fix those errors, you have to put two equal signs in the if statement condition and use printf inside the curly brackets.
+
+Correct output:
+int n = 1;
+	if(n == 0) {
+		printf("n is zero\n");
+	}
+
+6. In order to determine the number of bytes in a C++ datatype, put the datatype name first in parentheses, use the sizeof operator, and put the C++ format code in the parentheses.
+*Ex: printf("%d\n", (datatype)sizeof(datatype));*
+	Char - 1
+	Short - 2
+	Int - 4
+	Long - 8 (it can also be 4)
+*Operating system - macOS*
