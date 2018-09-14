@@ -1,0 +1,45 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+September 10, 2018
+
+Hw02 Short Answer Questions
+
+1. The first error in the following code is although min is declared as an integer, it is not set to anything, which causes the variable to be uninitialized in the for loop.  To fix it, set min to 0.  The second error is in the if statement, it will not compile if you put one equal sign (=).  To do that, put two equal (==) signs instead.
+
+Correct code:
+    int min = 0;
+    for(int i=0; i<10; ++i) {
+        int value;
+        scanf("%d", &value);
+        if(i==0) min = value;
+        else if(value<min) min = value;
+    } // end of loop over input
+    printf("The smallest or the 10 values you entered was %d\n", min);
+
+2. The problem within the given code is variables a and b are referring to themselves as opposed to the pointer pointing to the int.  In order to fix it, declare your pointers in the pointerToMax function method as a way to give a reference on where the data is pointing and eventually it will exist when you return it.
+
+Correct code:
+    int* pointerToMax(int* a, int* b) {
+        if(*a>*b) return a;
+        else return b;
+    }
+
+3. Based on the following code, the pointer is not pointing to anything at all and there is no way to predict what will happen.  As a possible result, it might either cause a seg(mentation) fault or print contents of some random memory.  Also, do not forget to put a semicolon after the printf statement as they are vital in coding.  In order to fix this, create a variable that points to the pointer prior to the pointer code, return a pointer to the data in that variable, and use that variable inside the printf code.
+
+Correct code:
+    int n = 0;
+    int* ptr = &n;
+    scanf("%d", ptr);
+    printf("You entered %d", n);
+
+4.
+	(a) int* a; - declares pointer a to integer value
+	(b) const int b; - declares const int b
+	(c) const int* c; - declares pointer c to const int
+	(d) int* const d; - declares const pointer d to int
+	(e) const int* const e; - declares const pointer e to const int
+
+5. The * operator dereferences a pointer and return the actual value of the data, whereas the & operator returns a pointer to the data in a variable based on what you named it.
+
+6. Const int* a declares the pointer to const int, whereas int* const b declares the const pointer to int.
