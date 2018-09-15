@@ -13,14 +13,17 @@ int main(int argc, const char * argv[]) {
     // Declare variables
     int a, b;
     
-    // Call out the function
+    // Call first integer
     printf("Enter an integer\n");
     scanf("%d", &a);
     printf("You entered %d\n", a);
     
+    // Call second integer
     printf("Enter another integer\n");
     scanf("%d", &b);
     printf("You entered %d\n", b);
+    
+    // Call out swap function
     swap(&a, &b);
     
     // Print out
