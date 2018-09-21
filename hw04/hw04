@@ -1,0 +1,51 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+September 17, 2018
+
+Hw04 Short Answer Questions
+
+1. In the following code, the variables (a and b) in the swap function definition are used as pointers as opposed to the variable tmp.  To fix the code, simply put the pointer symbol (*) to a and b in the code inside the curly brackets as opposed to the tmp variable/int.
+
+Correct code:
+void swap(int* a, int* b) {
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+} // end of swap method
+
+2. Although it does not look like there are any errors, the for loop does not have a condition to see if the index is less than the number that is mentioned in the array declared in the first line.  To fix it, simply add
+&& i < size; (in this case 8) after the null termination character for security purposes.
+
+Correct code:
+char copy[8];
+const char* string = "hello";
+    for(int i=0; string[i] != '\0' && i < 8; ++i) {
+        copy[i] = string[i];
+    }
+printf("%s\n", copy);
+
+3. f(array+3, 3);
+
+4. The problem with the code mentioned in the sheet is when the function allocateArray goes out of scope, it suddenly disappears.  To fix it, create the array on the heap and return it all in one line.
+
+Correct code:
+double* allocateArray(int length){
+	return new double[length];
+}
+
+5. The only situation with the following code is there is no null character ('\0').  Without that being terminated, your possible output would be the same message, but with a bunch of question marks.
+
+Output (without the null character): hello????
+
+To fix this, easily declare the number in the string array to 6 and create another line (string[5] = '\0';) in order to terminate the message.
+
+Correct code:
+	char string[6];
+	string[0] = 'h';
+	string[1] = 'e';
+	string[2] = 'l';
+	string[3] = 'l';
+	string[4] = 'o';
+	string[5] = '\0';
+	printf("%s\n", string);
