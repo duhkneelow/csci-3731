@@ -9,6 +9,6 @@
 #ifndef print_h
 #define print_h
 // Defining functions to read and write PPM image
-char* readPPM(char *magic, int *width, int *height, int *maximum, int *size);
-void writePPM(char *magic, int *width, int *height, int *maximum, int *size, char *p6);
+char* readPPM(char *magic, int *width, int *height, int *maximum);
+void writePPM(char *magic, int *width, int *height, int *maximum, char *p6);
 #endif /* print_h */
