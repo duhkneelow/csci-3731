@@ -11,10 +11,10 @@
 
 int main(int argc, const char * argv[]) {
     // Declare PPM attributes
-    char magic[2];
-    int width, height, maximum, size = 0;
+    char magic[3];
+    int width, height, maximum = 0;
     // Create array and point to it based on readPPM function
-    char *p6 = readPPM(magic, &width, &height, &maximum, &size);
+    char *p6 = readPPM(magic, &width, &height, &maximum);
     
     // If statement if not PPM image
     if (p6 == NULL){
@@ -22,13 +22,13 @@ int main(int argc, const char * argv[]) {
     }
     else {
         // Otherwise, codes to print out PPM image attributes
+        printf("Image type= %s\n", magic);
         printf("Width= %d, Height= %d\n", width, height);
         printf("Maximum pixel number= %d\n", maximum);
-        printf("Size of image= %d\n\n", size);
         
         // Codes to indicate PPM image being copied
         printf("Copying image:\n");
-        writePPM(magic, &width, &height, &maximum, &size, p6);
+        writePPM(magic, &width, &height, &maximum, p6);
         printf("New image created!\n");
     }
 }
