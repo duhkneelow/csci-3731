@@ -28,6 +28,9 @@ int main(int argc, const char * argv[]) {
         writePPM(magic, width, height, maximum, p6);
         printf("New image created!\n");
     }
+    else{
+        printf("What in the world are you doing?"\n);
+    }
     
     delete [] *p6;
     delete [] p6;
