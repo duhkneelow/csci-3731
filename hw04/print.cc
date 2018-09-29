@@ -10,7 +10,7 @@
 #include "print.h"
 
 // Declaring function to read PPM image
-char* readPPM(char *magic, int *width, int *height, int *maximum, int *size){
+char* readPPM(char *magic, int *width, int *height, int *maximum){
     // Opens and reads PPM image
     FILE* fp = fopen("test.ppm", "rb");
     
@@ -23,11 +23,11 @@ char* readPPM(char *magic, int *width, int *height, int *maximum, int *size){
     }
 
     // Figures out size of image
-    *size = *width * *height * 3;
+    int size = *width * *height * 3;
     // Code to allocate array for pixels of PPM image
-    char* p6 = new char[*size];
+    char* p6 = new char[size];
     // Reads PPM image size
-    fread(p6, sizeof(char), *size, fp);
+    fread(p6, sizeof(char), size, fp);
     // Closes file
     fclose(fp);
     // Returns the array
@@ -35,13 +35,14 @@ char* readPPM(char *magic, int *width, int *height, int *maximum, int *size){
 }
 
 // Declaring function to write PPM image
-void writePPM(char *magic, int *width, int *height, int *maximum, int *size, char *p6){
+void writePPM(char *magic, int *width, int *height, int *maximum, char *p6){
     // Creates another PPM image called test2.ppm
-    FILE* fp = fopen("test2.ppm", "wb");
+    FILE* fw = fopen("test2.ppm", "wb");
+    int size = *width * *height * 3;
     // Prints out attributes
-    fprintf(fp, "%s %d %d %d\n", magic, *width, *height, *maximum);
+    fprintf(fw, "%s %d %d %d\n", magic, *width, *height, *maximum);
     // Writes out PPM image size
-    fwrite(p6, sizeof(char), *size, fp);
+    fwrite(p6, sizeof(char), size, fw);
     // Closes file
-    fclose(fp);
+    fclose(fw);
 }
