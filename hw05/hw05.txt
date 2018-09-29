@@ -1,0 +1,16 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+September 24, 2018
+
+Hw05 Short Answer Questions
+
+1. The main problem with two-dimensional arrays in C/C++ is it has poor support for those types of arrays.  To be specific, although they are useful for storing tables and images, C was originally made to write operating systems, and people rarely dealt with them.
+
+2. One way to solve this situation with two-dimensional arrays is to solely create a flat (1D) array (on the heap) by laying your rows from end to end and eventually computing the offset into your array in order to receive access of the array elements.  Another (if not, better) way is to use the "Numerical Recipes Trick", where you use two arrays (a flat array and another array for pointers).  For that method, each pointer in that array points to the start of a row in the flat array.
+
+3. To figure out if your computer is big or little endian, use the following code to cast your pointers:
+    int n = 256;
+    unsigned char* bytes = (unsigned char*)(&n);
+    printf("%d %d %d %d\n", bytes[0], bytes[1], bytes[2], bytes[3]);
+In my computer (macOS) in this case, it is little endian (0 1 0 0).  
