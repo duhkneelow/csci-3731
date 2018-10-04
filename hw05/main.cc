@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
         printf("New image created!\n");
     }
     else{
-        printf("What in the world are you doing?"\n);
+        printf("What in the world are you doing?\n");
     }
     
     delete [] *p6;
