@@ -72,7 +72,7 @@ void writePPM(char *magic, int width, int height, int maximum, int** p6){
     // Prints out attributes
     fprintf(fw, "%s %d %d %d\n", magic, width, height, maximum);
     // Writes out PPM image size
-    fwrite(p6, sizeof(char), size, fw);
+    fwrite(array, sizeof(char), size, fw);
     // Closes file
     fclose(fw);
 }
