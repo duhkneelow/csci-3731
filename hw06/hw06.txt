@@ -1,0 +1,14 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+October 1, 2018
+
+Hw06 Short Answer Questions
+
+1. Having a library is a convenient way to collect and pack your object (.o) files into a single file as opposed to having a lot (tens, hundreds, etc.) .o files.  Then, you can link them to your library.  You can also distribute and reuse the compiled code and someone else has possibly written a library that does what you need to do.
+
+2. The two types of libraries are:
+	
+Static - A library that is linked into your executable, which works similar as individualized .o files.  The advantage of having a static library is the executable can run without having the library file around as long as you link it to the executable.  When you do that, it simplifies the code distribution.  However, static libraries can 	make your executable size larger.
+
+Shared Object / Dynamic Linked - A library that remains separate from your executable and loads at runtime.  The advantage of having a shared object library is it can be used by several different executables, which means you only need one copy of the library on your system despite the amount of executables that use it.
