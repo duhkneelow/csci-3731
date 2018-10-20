@@ -30,13 +30,13 @@ Projectile::Projectile (double speed, double velocity) {
 	...
 } // end of constructor
 
-The final error with the constructor is the pointers are not dereferenced at all since this.x is used in Java.  To dereference the pointers, use the -> operator our dereference them in this format (*this).x.
+The final error with the constructor is the pointers are not dereferenced at all since this.x is used in Java and should be based on the variables you declared.  To dereference the pointers, use the -> operator our dereference them in this format (*this).speed.
 
 Correct code #3:
 
 Projectile::Projectile (double speed, double velocity) {
-	this->x = x;
-	this->y = y;
+	this->speed = speed;
+	this->velocity = velocity;
 } // end of constructor
 
 3.
