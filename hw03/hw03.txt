@@ -3,7 +3,7 @@ Dr. Edward Pier
 CSCI 3731
 September 10, 2018
 
-Hw02 Short Answer Questions
+Hw03 Short Answer Questions
 
 1. The first error in the following code is although min is declared as an integer, it is not set to anything, which causes the variable to be uninitialized in the for loop.  To fix it, set min to 0.  The second error is in the if statement, it will not compile if you put one equal sign (=).  To do that, put two equal (==) signs instead.
 
