@@ -1,0 +1,58 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+October 15, 2018
+
+Hw07 Short Answer Questions
+
+1. Although the code looks fine, there is no semicolon at the end of the class.  Without it, an error shows up when compiling a .cc file and it would be confusing/hard to track down.  To fix it, simply put the semicolon right after the closing curly bracket to indicate the end of a class.
+
+Correct code:
+#ifndef PROJECTILE_H
+#define PROJECTILE_H
+class Projectile {
+
+...
+
+}; // End of Projectile class
+
+2. The first error of the Projectile constructor is there is no "::" to show which class this method belongs to.  To fix it, simply put in this format (classname :: method) such as the example provided below:
+
+Correct code #1:
+
+Projectile::Projectile (...) {
+
+The next error is the datatypes of the arguments in the constructor are not the same as the Projectile class (the constructor uses ints, whereas the class uses doubles).  To fix it, change the arguments in the constructor to doubles.
+
+Correct code #2:
+
+Projectile::Projectile (double speed, double velocity) {
+	...
+} // end of constructor
+
+The final error with the constructor is the pointers are not dereferenced at all since this.x is used in Java.  To dereference the pointers, use the -> operator our dereference them in this format (*this).x.
+
+Correct code #3:
+
+Projectile::Projectile (double speed, double velocity) {
+	this->x = x;
+	this->y = y;
+} // end of constructor
+
+3.
+
+a. int* method(int* arg); - The non-constant method takes a pointer to a non-constant integer and returns a pointer to a non-constant integer.
+
+b. const int* method(int* arg); - The non-constant method takes a pointer to a non-constant integer and returns a pointer to a constant integer.
+
+c. const int* const method(int* arg); - The constant method takes a pointer to a non-constant integer and returns a pointer to a constant integer.
+
+d. const int* const method(const int* arg); - The constant method takes a pointer to a constant integer and returns a pointer to a different constant integer.
+
+e. const int* const method(const int* arg) const; - The constant method takes a pointer to a constant integer, returns a pointer to a different constant integer, and does not modify its object in the process. 
+
+4. C++ strings are safer and more convenient to use than C strings and you do not have to worry about adding the null terminator.  They also have methods that can go along with them, which can allow you to play with the strings and they are practical with operator overloading.  On the other hand, C strings are handy when you need to use C libraries, writing super performance-critical code requiring lightweight C strings, and some C++ functions take C strings as arguments.
+
+5. A pointer has access to memory locations of values, has to be dereferenced prior to use, and can change what it points to unless you make it constant.  A reference, on the other hand, works similarly to pointers, but are automatically dereferenced.  However, you cannot change what it points to after you initialize it and it will always point to the same place in memory.  Also, you must initialize a reference to point it to a valid variable when declaring one (in other words, references are NEVER null).
+
+6. A destructor is used when it gets called to delete a class, either when an object on the stack goes out of scope or when an object on the heap is deleted.  The main use is to delete heap data created by the object.
