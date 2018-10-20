@@ -10,8 +10,7 @@
 #include "factorial.h"
 
 // code to define factorial function
-long factorial(int n)
-{
+long factorial(int n){
     if (n == 0)
         return 1;
     else
