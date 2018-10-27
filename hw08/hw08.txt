@@ -1,0 +1,32 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+October 22, 2018
+
+Hw08 Short Answer Questions
+
+1. The friend keyword gives a class access to any external functions.  In other words, it can also act as a function declaration.
+
+2. You should not use "using namespace std;" especially in header files because it will import the namespace in any C++ file that will include the header.  Utilizing this command will defeat the purpose of namespaces since you cannot use it to avoid any name collisions.  Instead of "using namespace std;", type in a different command (std::string) in your header files as well as your .cc files for consistency purposes.
+
+3. The four ways of returning an object from a method are:
+
+a. Returning a reference to a class member - Using this method works great with "get" methods in order to gain access to any class property or it can create new information as opposed to getting a class member.  The disadvantage with this method is it will return the same object whenever you call the method.
+
+b. Returning a copy - Using this method can return a new object completely separate from the data in the class object.  The disadvantage is that it can copy the object, which makes this method not as practical.
+
+c. Returning an object created on the heap - To use this method, you have to force the caller to deal with heap data.  Also, this method is allocating new memory whenever you call it.
+
+d. Use an argument - Use this method by passing a non-const reference to an existing object in order to modify it.  The advantage is that it leaves all memory management to the caller.  However, it will not work if the object does not have methods that let you set it to the desired state unless you have a const in order to make a class immutable.
+
+4. The mutable keyword is handy for marking class members that can be changed inside of a const method.  However, you should do this in moderation because when the compiler complains that you plan to modify a class member inside of a const method, the user might think that taking off the const method would be the solution, which means you do not have to use the mutable keyword.
+
+5. The three ways for a class that have an object in C++ is when it works as:
+
+a. An actual object - Is similar to actual objects in a Line class.  The objects are stored as stack data so C++ can get destroyed when Line is destroyed, which simplifies memory management.
+
+b. A reference - Class does not own the objects such as a Line class referencing to two points, which allows two different Lines to share those points if needed.  The disadvantage is you have to initialize the references when you declare them and you cannot change them nor can it be NULL.
+
+c. A pointer - Allows the class to keep track of the possible ownership of objects, which requires boolean flags.  Then, you initialize the objects to null and the boolean flags to true in the constructor without arguments.  You delete the object only if you own them in the destructor.  Then we need to make a borrowing (if we own an object and delete it, store it and set the respected flag to false) and owning (if we do not own the object, we have to create a new object that we own, discard anything that was pointing, and set it) set method.
+
+6. A singleton is a class that can only have one instance.
