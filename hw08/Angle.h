@@ -15,6 +15,10 @@
 class Angle {
 private:
     int degrees; /* Declare degrees as int */
+    mutable double sinValue;
+    mutable double cosValue;
+    mutable bool have_sin;
+    mutable bool have_cos;
     
 public:
     Angle(int x); /* For constructor */

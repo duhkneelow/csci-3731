@@ -33,7 +33,7 @@ void Population::add(Fish *f){
 void Population::remove(int index){
     if(num>0){
         num--;
-        for(int i = index; i<num; i++){
+        for(int i=index; i<num; i++){
             fishes[i] = fishes [i+1];
         }
     }
@@ -52,7 +52,7 @@ Fish* Population::get_fish(int index) const{
 
 // Supposed to be a get method for # of fish in population pool
 int Population::get_index(Fish* f) const{
-    for(int i=0; i<num;i++){
+    for(int i=0;i<num;i++){
         if(fishes[i] == f) return i;
     }
     return -1;

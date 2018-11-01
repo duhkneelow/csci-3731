@@ -19,6 +19,8 @@ Angle::Angle(int x) {
     degrees = x;
     while(degrees>= 360.0) degrees -= 360.0;
     while(degrees<    0.0) degrees += 360.0;
+    have_sin = false;
+    have_cos = false;
 }
 
 /* Destructor for Angle */
@@ -34,14 +36,24 @@ int Angle::getX() const {
 /* Sets degrees for Angle */
 void Angle::set(int x) {
     this->degrees = x;
+    sinValue = false;
+    cosValue = false;
 }
 
 double Angle::getCos() const {
-    return cos(degrees * (M_PI / 180.0));
+    if(!have_cos){
+        cosValue = sin(degrees*M_PI/180.0);
+        have_cos = true;
+    }
+    return cosValue;
 }
 
 double Angle::getSin() const {
-    return sin(degrees * (M_PI / 180.0));
+    if(!have_sin){
+        sinValue = sin(degrees*M_PI/180.0);
+        have_sin = true;
+    }
+    return sinValue;
 }
 
 /* Adds angles (+) */

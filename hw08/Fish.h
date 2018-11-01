@@ -19,14 +19,20 @@ class Fish{
         double y; /* y coordinate */
         double speed;
         double distance;
-        Angle* direction; /* direction based on Angle.cc */
-        Angle* turn_rate; /* turn rate based on Angle.cc */
+        Angle direction; /* direction based on Angle.cc */
+        Angle turn_rate; /* turn rate based on Angle.cc */
         Population* p; /* pointer to population pool */
     public:
-        Fish(double x, double y, double speed, double distance, Angle direction, Angle turn_rate, Population* p); /* constructor */
+        Fish(double x, double y, double speed, double distance, double dir, double t_rate, Population* p); /* constructor */
         virtual ~Fish(); /* destructor */
         Fish* next; /* points to next fish */
         void swim(); /* swim method */
         double getDistance() const; /* gets distance */
+};
+
+class DrunkFish : public Fish {
+public:
+    DrunkFish(double x, double y, double speed, double distance, double dir, double t_rate, Population* p);
+    virtual void swim() const;
 };
 #endif /* Fish_h */
