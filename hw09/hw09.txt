@@ -1,0 +1,18 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+October 29, 2018
+
+Hw09 Short Answer Questions
+
+1. "Downcasting" converts an object back to a subclass, whereas "upcasting" refers to an object as though it were its superclass.
+
+2. The virtual keyword can mark a method if a subclass overrides its superclass methods.  If the method is virtual in the superclass, then it is automatically virtual in the subclass.  However, using the virtual keyword in a method will cause it to run slower and virtual is only used in the header file.
+
+3. Dynamic casting looks at the actual type of the object being cast and checks if it is legal to cased based on the requested type, whereas static casting checks what they can  at compile time, but does not look at the actual type of the object at runtime.  People use dynamic casting since it works similarly to Java casting, but it can only cast pointers and references.  Others use static casting since it works faster than dynamic casting, but it is not safe to use.
+
+4. You might use const cast when you want to get rid of the const-ness (casting away const in a method) although it is generally a bad idea to use it.  One example would be calling someone else's code and they did not properly mark things const.  If you want to create a const object and use that method, you are unable to do so. 
+
+5. void eat(Fruit f) is searching for a Fruit object, whereas void eat(const Fruit& f) is searching a reference to Fruit, which in this case is Banana since it is Fruit's subclass.  Also, using "void eat(const Fruit& f)" will not be modified because it is declared const.
+
+6. In terms of multiple inheritance, Java has interfaces whereas C++ has a class that can inherit from more than one superclass.
