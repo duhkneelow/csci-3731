@@ -41,13 +41,13 @@ Projectile::Projectile (double speed, double velocity) {
 
 3.
 
-a. int* method(int* arg); - The non-constant method takes a pointer to a non-constant integer and returns a pointer to a non-constant integer.
+a. int* method(int* arg); - The non-constant method takes a pointer to an integer and returns a pointer to an integer.
 
-b. const int* method(int* arg); - The non-constant method takes a pointer to a non-constant integer and returns a pointer to a constant integer.
+b. const int* method(int* arg); - The non-constant method takes a pointer to an integer and returns a pointer to a constant integer.
 
-c. const int* const method(int* arg); - The constant method takes a pointer to a non-constant integer and returns a pointer to a constant integer.
+c. const int* const method(int* arg); - The method takes a pointer to an integer and returns a constant pointer to a constant integer.
 
-d. const int* const method(const int* arg); - The constant method takes a pointer to a constant integer and returns a pointer to a different constant integer.
+d. const int* const method(const int* arg); - The method takes a pointer to a constant integer and returns a constant pointer to a different constant integer.
 
 e. const int* const method(const int* arg) const; - The constant method takes a pointer to a constant integer, returns a pointer to a different constant integer, and does not modify its object in the process. 
 
