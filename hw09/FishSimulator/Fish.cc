@@ -7,6 +7,7 @@
 //
 
 #include "Fish.h"
+#include "Population.h"
 #include <cstdlib>
 #include <cmath>
 
@@ -16,10 +17,13 @@ Fish::Fish(double x, double y, double speed, double distance, Population* p){
     this->y = y;
     this->speed = speed;
     this->distance = distance;
+    this->p = p;
+    p->add(this);
 }
 
 Fish::~Fish() {
   // Fish destructor
+    p->remove(p->get_index(this));
 }
 
 /* Swim method (thank you Ed)

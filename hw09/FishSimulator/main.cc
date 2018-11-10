@@ -22,40 +22,22 @@ int main(int argc, const char * argv[]) {
     const Log& log = Log::getInstance();
     log.print(""); /* Prints message based on method in Log.cc */
     Population p; /* Declare population variable */
-    // Fishes (I know you wanted me to use a for loop, but when I used it, I had the same issue where I had no fish after the time was at 1 when I ran my code from last week's assignment)
-    Fish* f1 = new FlipFish(0.0, 0.0, 5.0, 10.0, 20.0, 31.0, &p);
-    Fish* f2 = new FlipFish(0.0, 0.0, 10.0, 5.0, 13.0, 33.0, &p);
-    Fish* f3 = new FlipFish(0.0, 0.0, 15.0, 1.0, 26.0, 40.0, &p);
-    Fish* f4 = new FlipFish(0.0, 0.0, 20.0, 12.0, 19.0, 22.0, &p);
-    Fish* f5 = new FlipFish(0.0, 0.0, 25.0, 13.0, 21.0, 24.0, &p);
-    Fish* f6 = new DrunkFish(0.0, 0.0, 5.0, 10.0, &p);
-    Fish* f7 = new DrunkFish(0.0, 0.0, 10.0, 25.0, &p);
-    Fish* f8 = new DrunkFish(0.0, 0.0, 15.0, 50.0, &p);
-    Fish* f9 = new DrunkFish(0.0, 0.0, 20.0, 75.0, &p);
-    Fish* f10 = new DrunkFish(0.0, 0.0, 25.0, 90.0, &p);
-    p.add(f1);
-    p.add(f2);
-    p.add(f3);
-    p.add(f4);
-    p.add(f5);
-    p.add(f6);
-    p.add(f7);
-    p.add(f8);
-    p.add(f9);
-    p.add(f10);
+    // Fishes
+    int amount = 100;
+    int flipCount = 0;
+    int drunkCount = 0;
+    if (amount > 0) {
+        for (int i = 0; i < amount; ++i) {
+            Fish* f1 = new FlipFish(0.0, 0.0, 5.0, 0.0, 10.0, 30.0, &p);
+            ++flipCount;
+            Fish* f2 = new DrunkFish(0.0, 0.0, 5.0, 50.0, &p);
+            ++drunkCount;
+        }
+    } else {
+        throw Exception("There needs to be 1 fish in the pool.");
+    }
     
     int time = 0; /* Declare time as integer */
-    // Flip and drunk fish starting positions
-    std::cout<<"Flip fish #1 start position: "<<f1->getDistance()<<std::endl;
-    std::cout<<"Flip fish #2 start position: "<<f2->getDistance()<<std::endl;
-    std::cout<<"Flip fish #3 start position: "<<f3->getDistance()<<std::endl;
-    std::cout<<"Flip fish #4 start position: "<<f4->getDistance()<<std::endl;
-    std::cout<<"Flip fish #5 start position: "<<f5->getDistance()<<std::endl;
-    std::cout<<"Drunk fish #1 start position: "<<f6->getDistance()<<std::endl;
-    std::cout<<"Drunk fish #2 start position: "<<f7->getDistance()<<std::endl;
-    std::cout<<"Drunk fish #3 start position: "<<f8->getDistance()<<std::endl;
-    std::cout<<"Drunk fish #4 start position: "<<f9->getDistance()<<std::endl;
-    std::cout<<"Drunk fish #5 start position: "<<f10->getDistance()<<std::endl;
     
     while(true){
         time++;
@@ -67,7 +49,14 @@ int main(int argc, const char * argv[]) {
             
             /* Returns distance in getDistance() method from Fish.cc */
             if(p.get_fish(i)->getDistance()>=100){
-                std::cout<< p.get_fish(i) <<" is dead in "<< time << " minutes" << std::endl;
+                /*std::cout<< p.get_fish(i) <<" is dead in "<< time << " minutes" << std::endl;*/
+                const std::type_info& type = typeid(p.get_fish(i));
+                if (type == typeid(DrunkFish)) {
+                    --drunkCount;
+                }
+                else {
+                    --flipCount;
+                }
                 p.remove(i);
             }
         }
