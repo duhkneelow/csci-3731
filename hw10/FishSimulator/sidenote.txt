@@ -1,0 +1,5 @@
+Hey Ed,
+
+I know this is not the code that I showed to you earlier, but I had to change it a bit since some of my fish still went over the distance of 100 from the previous code even though I put an if statement on that one.
+
+-Daniel

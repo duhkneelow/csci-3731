@@ -1,0 +1,14 @@
+Daniel Nilo
+Dr. Edward Pier
+CSCI 3731
+November 9, 2018
+
+Hw10 Short Answer Questions
+
+1. Java implements collections with a universal base class called Object, and with that you can put any type of object inside a collection of Objects.  For example, in Java an ArrayList consists of a list of Objects and since Object is considered a "superclass" of all classes in Java, you can put any object in ArrayList.  On the other hand, C++ implements collections with a standard set of collections templates called the Standard Template Library (STL).  Some examples of C++ templates include vector, list, set and map.
+
+2. A template is a description of how you would write a class and allows the user to write code which can work with any data type as opposed to creating many classes to cover different data types.  Unlike classes, you do not have to create a .cc file whenever you need a template.
+
+3. The disadvantages of creating templates are that the compiler makes and compiles a separate version of the class whenever you instantiate a template.  The compiler then has to recompile all of the class's methods for every instantiation.  Also, templates can make your executable files larger and can slow down compilation.  Other than the issues previously discussed, templates are not related to classes at all since you cannot cast one to the other and you also cannot write a method that would take either as an argument.
+
+4. An iterator (in C++) is a specific class that represents the current element of a collection and lets you step from one element to the next element.  In Java, an iterator is treated as an interface.
