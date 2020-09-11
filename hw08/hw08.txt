@@ -5,7 +5,7 @@ October 22, 2018
 
 Hw08 Short Answer Questions
 
-1. The friend keyword gives a class access to any external functions.  In other words, it can also act as a function declaration.
+1. When using the friend keyword, the class is granting access to any external functions.  In other words, it can also act as a function declaration.
 
 2. You should not use "using namespace std;" especially in header files because it will import the namespace in any C++ file that will include the header.  Utilizing this command will defeat the purpose of namespaces since you cannot use it to avoid any name collisions.  Instead of "using namespace std;", type in a different command (std::string) in your header files as well as your .cc files for consistency purposes.
 

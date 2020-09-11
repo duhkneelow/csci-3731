@@ -49,7 +49,7 @@ c. const int* const method(int* arg); - The method takes a pointer to an integer
 
 d. const int* const method(const int* arg); - The method takes a pointer to a constant integer and returns a constant pointer to a different constant integer.
 
-e. const int* const method(const int* arg) const; - The constant method takes a pointer to a constant integer, returns a pointer to a different constant integer, and does not modify its object in the process. 
+e. const int* const method(const int* arg) const; - The constant method (does not modify its object in the process) takes a pointer to a constant integer, returns a pointer to a different constant integer. 
 
 4. C++ strings are safer and more convenient to use than C strings and you do not have to worry about adding the null terminator.  They also have methods that can go along with them, which can allow you to play with the strings and they are practical with operator overloading.  On the other hand, C strings are handy when you need to use C libraries, writing super performance-critical code requiring lightweight C strings, and some C++ functions take C strings as arguments.
 
